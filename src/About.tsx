@@ -2,7 +2,7 @@ import React from "react"
 
 const About: React.FC = () => {
   return (
-    <div className="p-4 prose">
+    <div className="mx-auto w-full max-w-3xl p-4 prose dark:prose-invert">
       <h2>About</h2>
       <p>
         This site was built by <a>@daniellytle</a> to better visualize and

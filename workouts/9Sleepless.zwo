@@ -1,6 +1,6 @@
 
   <workout_file>
-    <name>9 Sleepless</name>
+    <name>Sleepless</name>
     <description>This workout takes on a pyramid style structure, where the efforts progress from 10 seconds up to 1 minute then after a recovery period reduce back down from 1 minute to 10 seconds. The rest mirrors the effort throughout.</description>
     <author>Zwift</author>
     <sportType>bike</sportType>

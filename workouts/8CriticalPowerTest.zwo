@@ -1,6 +1,6 @@
 
   <workout_file>
-    <name>8 Critical Power Test</name>
+    <name>Critical Power Test</name>
     <description>This TrainSharp test is designed to measure your 3 minute Critical Power. As with any test or race, ensure you are appropriately warmed up and motivated for this test. It is a short, but sharp, session today! The effort itself is 3 minutes in total duration. It is designed to be an un-paced effort, so ERG mode will automatically turn off for the interval. You’re on your own for those 3 min. Hit the first 30 seconds as hard as you can, out of the saddle, trying to achieve your maximum power (we will be assessing your sprint power from the first 30 seconds of this test). As you fade through the effort, use your gears to reduce the resistance and maintain cadence. Aiming for 90-100 rpm for the duration of the test. Finish this effort completely spent, go all-out. This will feel like a very long 3 minutes, the key is to not bail on the effort regardless of how much your power fades or how hard it feels!</description>
     <author>Zwift</author>
     <sportType>bike</sportType>

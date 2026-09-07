@@ -1,6 +1,6 @@
 
   <workout_file>
-    <name>1 Progressive Ramps</name>
+    <name>Progressive Ramps</name>
     <description>A series of three three-step ramps. Each ramp is progressively harder than the last, and each block is then progressively harder than the one that came before it. This workout is designed to challenge your ability to make small pace changes to respond to terrain or race-day pressure.</description>
     <author>Zwift</author>
     <sportType>bike</sportType>

@@ -1,6 +1,6 @@
 
   <workout_file>
-    <name>5 Race Simulation</name>
+    <name>Race Simulation</name>
     <description>MTB racing places the rider under some extreme circumstances. High power with low cadence, and long threshold efforts are just some examples of what you will experience racing.This is a race-simulation session, with intervals that are representative of a race, that also works on your threshold power. So not only will you get a taste of racing, but you will get a good training benefit too.</description>
     <author>Zwift</author>
     <sportType>bike</sportType>

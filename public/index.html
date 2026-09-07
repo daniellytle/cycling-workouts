@@ -7,6 +7,18 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var saved = null
+        try {
+          saved = localStorage.getItem("theme")
+        } catch (e) {}
+        var dark =
+          saved === "dark" ||
+          (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        if (dark) document.documentElement.classList.add("dark")
+      })()
+    </script>
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
