@@ -1,6 +1,6 @@
 
   <workout_file>
-    <name> Day3 Vo2climbing1</name>
+    <name> Day 3 Vo2climbing1</name>
     <description>Simulating the demands of climbing at a Vo2 Max intensity, today you will complete 5 x 3min intervals, followed by 3 x 2min intervals.However, the target cadence is reduced from 85rpm in the 3min intervals to 70rpm in the 2min intervals. Complete the 3min intervals seated and the 2min intervals standing if possible.</description>
     <author>Zwift</author>
     <sportType>bike</sportType>

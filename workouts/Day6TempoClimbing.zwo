@@ -1,6 +1,6 @@
 
   <workout_file>
-    <name> Day6 Tempo Climbing</name>
+    <name> Day 6 Tempo Climbing</name>
     <description>Simulating long climbs that require an increase in power as the effort goes on.But each tempo interval finishes with an above threshold effort.The target cadence throughout the tempo portion decreases. Position yourself on the bike as if climbing, sitting on the back of the seat.</description>
     <author>Zwift</author>
     <sportType>bike</sportType>
