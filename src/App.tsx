@@ -86,13 +86,7 @@ function App() {
               </div>
               <Link
                 className="ml-4 self-center"
-                to={"about"}
-              >
-                About
-              </Link>
-              <Link
-                className="ml-4 self-center"
-                to={"https://github.com/daniellytle/cycling-workout-directory"}
+                to={"https://github.com/daniellytle/cycling-workouts"}
                 aria-label="GitHub repository"
                 title="GitHub repository"
               >

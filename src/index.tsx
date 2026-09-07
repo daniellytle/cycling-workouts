@@ -5,7 +5,6 @@ import App from "./App"
 import reportWebVitals from "./reportWebVitals"
 import { createHashRouter, RouterProvider } from "react-router-dom"
 import WorkoutList from "./WorkoutList"
-import About from "./About"
 
 const router = createHashRouter([
   {
@@ -19,10 +18,6 @@ const router = createHashRouter([
       {
         path: "workouts/:workoutId",
         element: <WorkoutList />,
-      },
-      {
-        path: "about",
-        element: <About />,
       },
     ],
   },
