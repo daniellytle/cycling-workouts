@@ -1,0 +1,25 @@
+<workout_file>
+  <name>Pidcock CX Champion</name>
+  <description>Tom Pidcock "CX Champion" session: cyclocross-style repeatability work. Three rounds of 20sec@140% FTP flanking 2min20 @90% FTP with 3min recovery, then 5x30sec@140% FTP. Powers given directly as %FTP in the source.</description>
+  <author>https://www.trainingpeaks.com/training-plans/cycling/tp-619690/train-like-the-pros-7-pro-cyclist-training-sessions</author>
+  <sportType>bike</sportType>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.4" PowerHigh="0.75" />
+    <SteadyState Duration="240" Power="0.9" />
+    <SteadyState Duration="180" Power="0.55" />
+    <SteadyState Duration="20" Power="1.4" />
+    <SteadyState Duration="140" Power="0.9" />
+    <SteadyState Duration="20" Power="1.4" />
+    <SteadyState Duration="180" Power="0.7" />
+    <SteadyState Duration="20" Power="1.4" />
+    <SteadyState Duration="140" Power="0.9" />
+    <SteadyState Duration="20" Power="1.4" />
+    <SteadyState Duration="180" Power="0.7" />
+    <SteadyState Duration="20" Power="1.4" />
+    <SteadyState Duration="140" Power="0.9" />
+    <SteadyState Duration="20" Power="1.4" />
+    <SteadyState Duration="180" Power="0.7" />
+    <IntervalsT Repeat="5" OnDuration="30" OffDuration="30" OnPower="1.4" OffPower="0.65"/>
+    <Cooldown Duration="300" PowerLow="0.7" PowerHigh="0.45" />
+  </workout>
+</workout_file>

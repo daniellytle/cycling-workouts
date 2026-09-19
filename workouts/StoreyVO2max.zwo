@@ -1,0 +1,41 @@
+<workout_file>
+  <name>Storey VO2max</name>
+  <description>Dame Sarah Storey VO2max session: 5 rounds of 30sec at 125% FTP, 90sec at 100% FTP, 60sec at 55% FTP (a surge + sustain + recover pattern), repeated twice with a 90sec easy recovery between sets. Powers given directly as %FTP in the source.</description>
+  <author>https://www.trainingpeaks.com/training-plans/cycling/tp-619690/train-like-the-pros-7-pro-cyclist-training-sessions</author>
+  <sportType>bike</sportType>
+  <workout>
+    <Warmup Duration="1200" PowerLow="0.35" PowerHigh="0.75" />
+    <SteadyState Duration="30" Power="1.25" />
+    <SteadyState Duration="90" Power="1.0" />
+    <SteadyState Duration="60" Power="0.55" />
+    <SteadyState Duration="30" Power="1.25" />
+    <SteadyState Duration="90" Power="1.0" />
+    <SteadyState Duration="60" Power="0.55" />
+    <SteadyState Duration="30" Power="1.25" />
+    <SteadyState Duration="90" Power="1.0" />
+    <SteadyState Duration="60" Power="0.55" />
+    <SteadyState Duration="30" Power="1.25" />
+    <SteadyState Duration="90" Power="1.0" />
+    <SteadyState Duration="60" Power="0.55" />
+    <SteadyState Duration="30" Power="1.25" />
+    <SteadyState Duration="90" Power="1.0" />
+    <SteadyState Duration="60" Power="0.55" />
+    <SteadyState Duration="90" Power="0.55" />
+    <SteadyState Duration="30" Power="1.25" />
+    <SteadyState Duration="90" Power="1.0" />
+    <SteadyState Duration="60" Power="0.55" />
+    <SteadyState Duration="30" Power="1.25" />
+    <SteadyState Duration="90" Power="1.0" />
+    <SteadyState Duration="60" Power="0.55" />
+    <SteadyState Duration="30" Power="1.25" />
+    <SteadyState Duration="90" Power="1.0" />
+    <SteadyState Duration="60" Power="0.55" />
+    <SteadyState Duration="30" Power="1.25" />
+    <SteadyState Duration="90" Power="1.0" />
+    <SteadyState Duration="60" Power="0.55" />
+    <SteadyState Duration="30" Power="1.25" />
+    <SteadyState Duration="90" Power="1.0" />
+    <SteadyState Duration="60" Power="0.55" />
+    <Cooldown Duration="510" PowerLow="0.55" PowerHigh="0.45" />
+  </workout>
+</workout_file>

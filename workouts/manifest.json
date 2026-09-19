@@ -26,5 +26,33 @@
   "McNultyRecoveryRide.zwo": {
     "rider": "Brandon McNulty",
     "tags": ["Recovery", "Endurance"]
+  },
+  "VanDerPoelFullGas.zwo": {
+    "rider": "Mathieu van der Poel",
+    "tags": ["Anaerobic", "Sprint", "Classics"]
+  },
+  "VanVleutenVO2max.zwo": {
+    "rider": "Annemiek van Vleuten",
+    "tags": ["VO2", "Climbing"]
+  },
+  "StoreyVO2max.zwo": {
+    "rider": "Dame Sarah Storey",
+    "tags": ["VO2", "Time-Trial"]
+  },
+  "AbrahamsenSweetspotThreshold.zwo": {
+    "rider": "Jonas Abrahamsen",
+    "tags": ["Sweet Spot", "Threshold"]
+  },
+  "PidcockCXChampion.zwo": {
+    "rider": "Tom Pidcock",
+    "tags": ["Anaerobic", "Classics", "Cyclocross"]
+  },
+  "ArmstrongTurnUpTheHeat.zwo": {
+    "rider": "Kristin Armstrong",
+    "tags": ["Threshold", "Time-Trial"]
+  },
+  "RoglicUnderOver.zwo": {
+    "rider": "Primoz Roglic",
+    "tags": ["Threshold", "Over-Under", "Climbing"]
   }
 }

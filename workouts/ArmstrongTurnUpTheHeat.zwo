@@ -1,0 +1,27 @@
+<workout_file>
+  <name>Armstrong Turn Up The Heat</name>
+  <description>Kristin Armstrong "Turn Up The Heat" session: a 1min step ladder from 60% to 120% FTP, then three rounds of 3min@93% FTP with a 1min@110% surge followed by 1min recovery. Powers given directly as %FTP in the source.</description>
+  <author>https://www.trainingpeaks.com/training-plans/cycling/tp-619690/train-like-the-pros-7-pro-cyclist-training-sessions</author>
+  <sportType>bike</sportType>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.35" PowerHigh="0.55" />
+    <SteadyState Duration="60" Power="0.6" />
+    <SteadyState Duration="60" Power="0.7" />
+    <SteadyState Duration="60" Power="0.8" />
+    <SteadyState Duration="60" Power="0.9" />
+    <SteadyState Duration="60" Power="1.0" />
+    <SteadyState Duration="60" Power="1.1" />
+    <SteadyState Duration="60" Power="1.2" />
+    <SteadyState Duration="120" Power="0.5" />
+    <SteadyState Duration="180" Power="0.93" />
+    <SteadyState Duration="60" Power="1.1" />
+    <SteadyState Duration="60" Power="0.55" />
+    <SteadyState Duration="180" Power="0.93" />
+    <SteadyState Duration="60" Power="1.1" />
+    <SteadyState Duration="60" Power="0.55" />
+    <SteadyState Duration="180" Power="0.93" />
+    <SteadyState Duration="60" Power="1.1" />
+    <SteadyState Duration="60" Power="0.55" />
+    <Cooldown Duration="360" PowerLow="0.55" PowerHigh="0.4" />
+  </workout>
+</workout_file>

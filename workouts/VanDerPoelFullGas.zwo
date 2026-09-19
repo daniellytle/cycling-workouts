@@ -1,0 +1,19 @@
+<workout_file>
+  <name>Van der Poel Full Gas</name>
+  <description>Mathieu van der Poel "Full gas" session: a sprint/anaerobic opener with 2x1min at FTP, short 110-120% surges, then two blocks of 4x30sec at 163% FTP (full recovery). Finishes with 10min tempo at 65% FTP. Powers given directly as %FTP in the source.</description>
+  <author>https://www.trainingpeaks.com/training-plans/cycling/tp-619690/train-like-the-pros-7-pro-cyclist-training-sessions</author>
+  <sportType>bike</sportType>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.4" PowerHigh="0.75" />
+    <IntervalsT Repeat="2" OnDuration="60" OffDuration="60" OnPower="1.0" OffPower="0.8"/>
+    <SteadyState Duration="30" Power="1.1" />
+    <SteadyState Duration="30" Power="0.5" />
+    <SteadyState Duration="30" Power="1.2" />
+    <SteadyState Duration="30" Power="0.5" />
+    <SteadyState Duration="120" Power="0.5" />
+    <IntervalsT Repeat="4" OnDuration="30" OffDuration="60" OnPower="1.63" OffPower="0.3"/>
+    <SteadyState Duration="600" Power="0.65" />
+    <IntervalsT Repeat="4" OnDuration="30" OffDuration="60" OnPower="1.63" OffPower="0.3"/>
+    <Cooldown Duration="300" PowerLow="0.65" PowerHigh="0.35" />
+  </workout>
+</workout_file>

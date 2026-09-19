@@ -1,0 +1,19 @@
+<workout_file>
+  <name>Roglic Under-Over</name>
+  <description>Primoz Roglic under/over threshold session: four blocks of 4x (20sec @125% FTP / 40sec @100% FTP), each block separated by 5min at 50% FTP. Trains ability to clear lactate and sustain efforts at/above threshold. Powers given directly as %FTP in the source.</description>
+  <author>https://www.trainingpeaks.com/training-plans/cycling/tp-619690/train-like-the-pros-7-pro-cyclist-training-sessions</author>
+  <sportType>bike</sportType>
+  <workout>
+    <Warmup Duration="900" PowerLow="0.3" PowerHigh="0.75" />
+    <SteadyState Duration="300" Power="0.5" />
+    <IntervalsT Repeat="4" OnDuration="20" OffDuration="40" OnPower="1.25" OffPower="1.0"/>
+    <SteadyState Duration="300" Power="0.5" />
+    <IntervalsT Repeat="4" OnDuration="20" OffDuration="40" OnPower="1.25" OffPower="1.0"/>
+    <SteadyState Duration="300" Power="0.5" />
+    <IntervalsT Repeat="4" OnDuration="20" OffDuration="40" OnPower="1.25" OffPower="1.0"/>
+    <SteadyState Duration="300" Power="0.5" />
+    <IntervalsT Repeat="4" OnDuration="20" OffDuration="40" OnPower="1.25" OffPower="1.0"/>
+    <SteadyState Duration="300" Power="0.5" />
+    <Cooldown Duration="240" PowerLow="0.5" PowerHigh="0.42" />
+  </workout>
+</workout_file>

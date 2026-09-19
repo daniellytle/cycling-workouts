@@ -1,0 +1,15 @@
+<workout_file>
+  <name>Abrahamsen Sweetspot-Threshold</name>
+  <description>Jonas Abrahamsen sweetspot-to-threshold session: 2hr progressive ladder of 6min efforts at 87%, 91%, 95% and 100% FTP, each done twice with 6min recovery at 50% FTP. Builds threshold durability. Powers given directly as %FTP in the source.</description>
+  <author>https://www.trainingpeaks.com/training-plans/cycling/tp-619690/train-like-the-pros-7-pro-cyclist-training-sessions</author>
+  <sportType>bike</sportType>
+  <workout>
+    <Warmup Duration="960" PowerLow="0.35" PowerHigh="0.75" />
+    <SteadyState Duration="240" Power="0.5" />
+    <IntervalsT Repeat="2" OnDuration="360" OffDuration="360" OnPower="0.87" OffPower="0.5"/>
+    <IntervalsT Repeat="2" OnDuration="360" OffDuration="360" OnPower="0.91" OffPower="0.5"/>
+    <IntervalsT Repeat="2" OnDuration="360" OffDuration="360" OnPower="0.95" OffPower="0.5"/>
+    <IntervalsT Repeat="2" OnDuration="360" OffDuration="360" OnPower="1.0" OffPower="0.5"/>
+    <Cooldown Duration="240" PowerLow="0.5" PowerHigh="0.44" />
+  </workout>
+</workout_file>

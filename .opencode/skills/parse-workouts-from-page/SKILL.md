@@ -55,6 +55,21 @@ becomes a `.zwo` file in `workouts/` plus a `manifest.json` entry.
    ```
    The aggregator reads only `*.zwo` (manifest.json is ignored as a workout).
 
+## Naming conventions
+
+Apply these to the `.zwo` filename, the `<name>` field, and the `rider`
+metadata:
+
+- **Capitalize** proper nouns and title words. Rider names and workout titles
+  start with uppercase (e.g. `Van der Poel Full Gas`, `Van Vleuten VO2max`,
+  `Roglic Under-Over`).
+- **ASCII only.** Strip/transliterate diacritics and other non-alphabet
+  characters: `Primož Roglič` → `Primoz Roglic`, `č/š/ž/é/ø` → `c/s/z/e/o`.
+  No `é`, `ö`, `ü`, etc. anywhere in names or filenames.
+- **Hyphens instead of slashes** in titles: `Under/Over` → `Under-Over`.
+- Filenames use PascalCase with no spaces: `VanDerPoelFullGas.zwo`,
+  `RoglicUnderOver.zwo`.
+
 ## .zwo format
 
 Standard structure (see `src/zwo.ts` for what the parser reads):
