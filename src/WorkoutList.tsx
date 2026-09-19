@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom"
 import WorkoutView from "./WorkoutView"
 import { computeTss, computeKj } from "./tss"
 import { useFtp } from "./ftp"
+import { workoutName } from "./workoutName"
 
 type SortKey = "name" | "duration" | "tss" | "kj"
 type SortDirection = "asc" | "desc"
@@ -27,6 +28,7 @@ const WorkoutList: React.FC = () => {
   }, [selectedWorkout])
   const [searchTerm, setSearchTerm] = useState<string>("")
   const [selectedTags, setSelectedTags] = useState<string[]>([])
+  const [selectedRiders, setSelectedRiders] = useState<string[]>([])
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
   const [minDuration, setMinDuration] = useState(0)
   const [maxDuration, setMaxDuration] = useState(100)
@@ -39,10 +41,10 @@ const WorkoutList: React.FC = () => {
       workout.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
       (selectedTags.length === 0 ||
         selectedTags.every((x) => workout.tags.includes(x))) &&
+      (selectedRiders.length === 0 ||
+        selectedRiders.includes(workout.rider)) &&
       (selectedCategories.length === 0 ||
-        selectedCategories.includes(workout.category)) &&
-      workout.duration > minDuration &&
-      workout.duration < maxDuration
+        selectedCategories.includes(workout.category))
   )
 
   const sortedWorkouts: ZwiftWorkout[] = [...filteredWorkouts].sort((a, b) => {
@@ -50,7 +52,7 @@ const WorkoutList: React.FC = () => {
     const dir = sortDirection === "asc" ? 1 : -1
     if (sortKey === "name") {
       return (
-        a.name.localeCompare(b.name, undefined, {
+        workoutName(a).localeCompare(workoutName(b), undefined, {
           numeric: true,
           sensitivity: "base",
         }) * dir
@@ -122,6 +124,9 @@ const WorkoutList: React.FC = () => {
   const tags: string[] = Array.from(
     new Set(workouts.map((item) => item.tags).flat())
   )
+  const riders: string[] = Array.from(
+    new Set(workouts.map((item) => item.rider).filter(Boolean))
+  ).sort()
 
   const navigate = useNavigate()
 
@@ -131,6 +136,14 @@ const WorkoutList: React.FC = () => {
       ? selectedTags.filter((t) => t !== tag)
       : [...selectedTags, tag]
     setSelectedTags(updatedTags)
+  }
+
+  const toggleRider = (rider: string) => {
+    resetTable()
+    const updatedRiders = selectedRiders.includes(rider)
+      ? selectedRiders.filter((r) => r !== rider)
+      : [...selectedRiders, rider]
+    setSelectedRiders(updatedRiders)
   }
 
   const toggleCategory = (category: string) => {
@@ -180,6 +193,23 @@ const WorkoutList: React.FC = () => {
           ))}
         </div>
         */}
+        <div className="mb-4">
+          <h3 className="text-sm font-semibold mb-1">Riders</h3>
+          {riders.map((rider, i) => (
+            <span
+              key={i}
+              className={
+                "select-none cursor-pointer mr-2 mb-2 inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset " +
+                (selectedRiders.includes(rider)
+                  ? "ring-blue-500/10 bg-blue-50 text-blue-600 dark:ring-blue-500/20 dark:bg-blue-500/10 dark:text-blue-400"
+                  : "ring-gray-500/10 bg-gray-50 text-gray-600 dark:ring-gray-500/20 dark:bg-gray-800 dark:text-gray-300")
+              }
+              onClick={() => toggleRider(rider)}
+            >
+              {rider}
+            </span>
+          ))}
+        </div>
         <div className="mb-4">
           <h3 className="text-sm font-semibold mb-1">Tags</h3>
           {tags.map((tag, i) => (
@@ -314,6 +344,11 @@ const WorkoutList: React.FC = () => {
                 </th>
                 {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">Category</th> */}
                 <th
+                  className="px-6 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500 hidden md:table-cell bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-10"
+                >
+                  Rider
+                </th>
+                <th
                   aria-sort={
                     sortKey === "duration"
                       ? sortDirection === "asc"
@@ -396,7 +431,7 @@ const WorkoutList: React.FC = () => {
             <tbody className="bg-white dark:bg-gray-900">
               {range.start > 0 && (
                 <tr aria-hidden="true" style={{ height: range.start * ROW_HEIGHT }}>
-                  <td colSpan={5} />
+                  <td colSpan={6} />
                 </tr>
               )}
               {sortedWorkouts.slice(range.start, range.end).map((workout) => (
@@ -416,8 +451,19 @@ const WorkoutList: React.FC = () => {
                   </td>
                   <td className="px-6 py-3.5 whitespace-nowrap align-middle">
                     <span className="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                      {workout.name}
+                      {workoutName(workout)}
                     </span>
+                  </td>
+                  <td className="px-6 py-3.5 whitespace-nowrap align-middle hidden md:table-cell">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        toggleRider(workout.rider)
+                      }}
+                      className="text-sm text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:underline"
+                    >
+                      {workout.rider}
+                    </button>
                   </td>
                   {/* <td className="px-6 py-4 whitespace-nowrap hidden md:table-cell">{workout.category}</td> */}
                   <td className="px-6 py-3.5 whitespace-nowrap text-right align-middle text-sm text-gray-500 dark:text-gray-400 tabular-nums hidden md:table-cell">
@@ -433,7 +479,7 @@ const WorkoutList: React.FC = () => {
               ))}
               {range.end < sortedWorkouts.length && (
                 <tr aria-hidden="true" style={{ height: (sortedWorkouts.length - range.end) * ROW_HEIGHT }}>
-                  <td colSpan={5} />
+                  <td colSpan={6} />
                 </tr>
               )}
             </tbody>

@@ -3,7 +3,8 @@ import { ZwiftWorkout } from "./types"
 import WorkoutChart from "./WorkoutChart"
 import { useFtp } from "./ftp"
 import { computeTss } from "./tss"
-import { FaRegClock } from "react-icons/fa"
+import { FaRegClock, FaExternalLinkAlt, FaDownload } from "react-icons/fa"
+import { workoutName, stripRiderName } from "./workoutName"
 
 interface MyProps {
   workout: ZwiftWorkout
@@ -26,54 +27,58 @@ const WorkoutView: React.FC<MyProps> = (props: MyProps) => {
 
   return (
     <div className="w-full prose max-w-none dark:prose-invert">
-      <h2 className="mb-4">{props.workout.name}</h2>
+      <h2 className="mb-1">{workoutName(props.workout)}</h2>
+      <p className="mb-4 text-sm font-medium text-gray-500 dark:text-gray-400">
+        {props.workout.rider}
+      </p>
       <div
         className="mb-4 p-4 w-full border border-color-gray-600 rounded dark:border-gray-600"
         style={{ height: 150 }}
       >
         <WorkoutChart workout={props.workout} interactive ftp={ftp} />
       </div>
-      <div className="mb-4">{props.workout.description}</div>
-      <div className="mb-4 flex gap-2 text-sm">
+      <div className="mb-4">
+        {stripRiderName(props.workout.description, props.workout.rider)}
+      </div>
+      <div className="mb-4 flex flex-wrap items-center gap-2 text-sm">
         <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 px-3 py-1 font-medium">
           <FaRegClock className="text-gray-500 dark:text-gray-400" />
           {Math.round(props.workout.duration)} min
         </span>
-        <div>
-          <span
-            className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-medium ${tssColor}`}
-          >
-            TSS {tss}
-          </span>
-        </div>
-      </div>
-      <div className="mb-4">
-        Source:{" "}
-        {/^https?:\/\//i.test(props.workout.source) ? (
+        <span
+          className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-medium ${tssColor}`}
+        >
+          TSS {tss}
+        </span>
+        <span className="ml-auto inline-flex items-center gap-2">
+          {/^https?:\/\//i.test(props.workout.source) ? (
+            <a
+              href={props.workout.source}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-blue-300 dark:border-blue-700 bg-blue-50 dark:bg-blue-900/40 px-3 py-1 font-medium text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/60"
+            >
+              <FaExternalLinkAlt className="text-xs" />
+              Source
+            </a>
+          ) : (
+            <span className="inline-flex items-center rounded-full border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 px-3 py-1 font-medium">
+              {props.workout.source}
+            </span>
+          )}
           <a
-            href={props.workout.source}
+            download={
+              props.workout.name.replace(/\s+/g, "-").toLowerCase() + ".zwo"
+            }
             target="_blank"
             rel="noreferrer"
-            className="font-bold text-blue-600 hover:underline dark:text-blue-400"
+            href={URL.createObjectURL(zwoFile)}
+            className="inline-flex items-center gap-1.5 rounded-full border border-orange-300 dark:border-orange-700 bg-orange-50 dark:bg-orange-900/40 px-3 py-1 font-medium text-orange-700 dark:text-orange-300 hover:bg-orange-100 dark:hover:bg-orange-900/60"
           >
-            {props.workout.source}
+            <FaDownload className="text-xs" />
+            .zwo
           </a>
-        ) : (
-          <span className="font-bold">{props.workout.source}</span>
-        )}
-      </div>
-      <div className="flex justify-end">
-        <a
-          download={
-            props.workout.name.replace(/\s+/g, "-").toLowerCase() + ".zwo"
-          }
-          target="_blank"
-          rel="noreferrer"
-          href={URL.createObjectURL(zwoFile)}
-          className="no-underline bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
-        >
-          Download .zwo File
-        </a>
+        </span>
       </div>
     </div>
   )
