@@ -1,0 +1,11 @@
+<workout_file>
+  <name>McNulty Low Cadence Torque</name>
+  <description>Brandon McNulty's low cadence torque session (12/11/21): 8x4 minute intervals at ~90% of FTP (370 W) at 40 rpm, for muscular endurance and fiber type conversion. Rest between intervals is not specified, so it is modeled as 3 minutes easy.</description>
+  <author>https://www.evoq.bike/blog/train-like-a-pro</author>
+  <sportType>bike</sportType>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.5" PowerHigh="0.7" />
+    <IntervalsT Repeat="8" OnDuration="240" OffDuration="180" OnPower="0.9" OffPower="0.5" Cadence="40"/>
+    <Cooldown Duration="600" PowerLow="0.65" PowerHigh="0.5" />
+  </workout>
+</workout_file>

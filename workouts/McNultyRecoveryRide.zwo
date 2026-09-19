@@ -1,0 +1,11 @@
+<workout_file>
+  <name>McNulty Recovery Ride</name>
+  <description>Brandon McNulty's recovery ride (5/13/22): 90 minutes at 188 W, well below 50% of FTP (~45%), to get blood flowing and prevent staleness in the legs.</description>
+  <author>https://www.evoq.bike/blog/train-like-a-pro</author>
+  <sportType>bike</sportType>
+  <workout>
+    <Warmup Duration="300" PowerLow="0.4" PowerHigh="0.45" />
+    <SteadyState Duration="4800" Power="0.45" />
+    <Cooldown Duration="300" PowerLow="0.45" PowerHigh="0.4" />
+  </workout>
+</workout_file>

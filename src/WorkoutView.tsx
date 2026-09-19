@@ -1,33 +1,11 @@
 import React from "react"
-import { ZwiftWorkout, ZwiftInterval } from "./types"
+import { ZwiftWorkout } from "./types"
 import WorkoutChart from "./WorkoutChart"
 import { useFtp } from "./ftp"
 import { computeTss } from "./tss"
 
 interface MyProps {
   workout: ZwiftWorkout
-}
-
-const formatDuration = (seconds: number): string => {
-  const mins = Math.floor(seconds / 60)
-  const secs = Math.round(seconds % 60)
-  return secs > 0 ? `${mins}:${secs.toString().padStart(2, "0")}` : `${mins} min`
-}
-
-const intervalWatts = (interval: ZwiftInterval, ftp: number): string => {
-  const startW = Math.round((interval.startPower / 100) * ftp)
-  const endW = Math.round((interval.endPower / 100) * ftp)
-  if (interval.startPower === interval.endPower) {
-    return `${startW} W`
-  }
-  return `${startW}–${endW} W`
-}
-
-const intervalLabel = (interval: ZwiftInterval): string => {
-  if (interval.startPower === interval.endPower) {
-    return `${Math.round(interval.startPower)}%`
-  }
-  return `${Math.round(interval.startPower)}→${Math.round(interval.endPower)}%`
 }
 
 const WorkoutView: React.FC<MyProps> = (props: MyProps) => {
@@ -45,7 +23,19 @@ const WorkoutView: React.FC<MyProps> = (props: MyProps) => {
       </div>
       <div className="mb-4">{props.workout.description}</div>
       <div className="mb-4">
-        Author: <span className="font-bold">{props.workout.author}</span>
+        Source:{" "}
+        {/^https?:\/\//i.test(props.workout.source) ? (
+          <a
+            href={props.workout.source}
+            target="_blank"
+            rel="noreferrer"
+            className="font-bold text-blue-600 hover:underline dark:text-blue-400"
+          >
+            {props.workout.source}
+          </a>
+        ) : (
+          <span className="font-bold">{props.workout.source}</span>
+        )}
       </div>
       <div className="mb-4 flex gap-6 text-sm">
         <div>
@@ -59,30 +49,6 @@ const WorkoutView: React.FC<MyProps> = (props: MyProps) => {
           <span className="font-medium">
             {Math.round(computeTss(props.workout).tss)}
           </span>
-        </div>
-      </div>
-      <div className="mb-4">
-        <div className="text-sm text-gray-500 dark:text-gray-400">
-          {props.workout.intervals.length} segments · power shown at FTP{" "}
-          {ftp} W
-        </div>
-        <div className="mt-2 max-h-64 overflow-y-auto rounded-lg border border-gray-200 dark:border-gray-700">
-          {props.workout.intervals.map((interval, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-between gap-4 border-b border-gray-100 dark:border-gray-800 px-3 py-1.5 text-sm last:border-b-0"
-            >
-              <span className="text-gray-500 dark:text-gray-400">
-                {formatDuration(interval.duration)}
-              </span>
-              <span className="text-gray-400 dark:text-gray-500">
-                {intervalLabel(interval)}
-              </span>
-              <span className="font-medium text-gray-700 dark:text-gray-200">
-                {intervalWatts(interval, ftp)}
-              </span>
-            </div>
-          ))}
         </div>
       </div>
       <div className="flex justify-end">

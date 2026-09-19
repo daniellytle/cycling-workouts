@@ -1,0 +1,13 @@
+<workout_file>
+  <name>McNulty Lactate Clearance</name>
+  <description>Brandon McNulty's lactate clearance session (8/9/22): 2x20 minute intervals at ~FTP (420 W), alternating 4 minutes just below FTP and 1 minute surge at 110-115% of FTP. Recovery between the two blocks is modeled as 10 minutes easy.</description>
+  <author>https://www.evoq.bike/blog/train-like-a-pro</author>
+  <sportType>bike</sportType>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.5" PowerHigh="0.75" />
+    <IntervalsT Repeat="4" OnDuration="240" OffDuration="60" OnPower="0.95" OffPower="1.12"/>
+    <SteadyState Duration="600" Power="0.5" />
+    <IntervalsT Repeat="4" OnDuration="240" OffDuration="60" OnPower="0.95" OffPower="1.12"/>
+    <Cooldown Duration="600" PowerLow="0.65" PowerHigh="0.5" />
+  </workout>
+</workout_file>

@@ -7,9 +7,10 @@ interface ZwiftInterval {
 interface ZwiftWorkout {
   name: string // Name of the workout
   description: string // Description of the workout
-  author: string // Author of the workout
+  source: string // Link to where the workout was sourced from
+  rider: string // Associated rider name
+  tags: string[] // Relevant tags (e.g. climbing, VO2, time-trial, ...)
   intervals: ZwiftInterval[] // Array of intervals
-  tags: string[]
   category: string
   rawXML: string
   duration: number

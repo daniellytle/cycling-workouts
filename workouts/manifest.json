@@ -1,0 +1,30 @@
+{
+  "McNultyBaseEndurance.zwo": {
+    "rider": "Brandon McNulty",
+    "tags": ["Endurance"]
+  },
+  "McNultyLowCadenceTorque.zwo": {
+    "rider": "Brandon McNulty",
+    "tags": ["Sweet Spot", "Climbing", "Strength"]
+  },
+  "McNultyTempo.zwo": {
+    "rider": "Brandon McNulty",
+    "tags": ["Tempo", "Time-Trial"]
+  },
+  "McNultyLactateClearance.zwo": {
+    "rider": "Brandon McNulty",
+    "tags": ["Threshold", "Time-Trial", "Lactate Clearance"]
+  },
+  "McNultyVO2max.zwo": {
+    "rider": "Brandon McNulty",
+    "tags": ["VO2", "Climbing"]
+  },
+  "McNultyRacePrep.zwo": {
+    "rider": "Brandon McNulty",
+    "tags": ["Race Prep", "VO2", "Classics"]
+  },
+  "McNultyRecoveryRide.zwo": {
+    "rider": "Brandon McNulty",
+    "tags": ["Recovery", "Endurance"]
+  }
+}

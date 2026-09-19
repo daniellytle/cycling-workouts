@@ -1,0 +1,11 @@
+<workout_file>
+  <name>McNulty Base Endurance</name>
+  <description>Brandon McNulty's steady base endurance ride. In his 12/15/21 base ride, 79% of the time was spent in Zone 2, ridden steadily at ~65% of FTP (271 W). Ride duration is not given in the source, so this is modeled as a 3-hour steady ride.</description>
+  <author>https://www.evoq.bike/blog/train-like-a-pro</author>
+  <sportType>bike</sportType>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.5" PowerHigh="0.65" />
+    <SteadyState Duration="9600" Power="0.65" />
+    <Cooldown Duration="600" PowerLow="0.65" PowerHigh="0.5" />
+  </workout>
+</workout_file>
