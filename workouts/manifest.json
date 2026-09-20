@@ -54,5 +54,21 @@
   "RoglicUnderOver.zwo": {
     "rider": "Primoz Roglic",
     "tags": ["Threshold", "Over-Under", "Climbing"]
+  },
+  "SimmonsFatMaxRaceSimulation.zwo": {
+    "rider": "Quinn Simmons",
+    "tags": ["Endurance", "Race Prep", "Tempo"]
+  },
+  "SimmonsLowCadenceStrength.zwo": {
+    "rider": "Quinn Simmons",
+    "tags": ["Strength", "Low Cadence", "Torque", "Sweet Spot"]
+  },
+  "SimmonsVO2MaxDeathMarch.zwo": {
+    "rider": "Quinn Simmons",
+    "tags": ["VO2"]
+  },
+  "SimmonsBreakawaySimulation.zwo": {
+    "rider": "Quinn Simmons",
+    "tags": ["Threshold", "Race Prep", "Tempo"]
   }
 }

@@ -1,0 +1,13 @@
+<workout_file>
+  <name>Simmons VO2 Max Death March</name>
+  <description>Quinn Simmons' "VO2 death march" (sea level): 5x3 min, 4x3 min, then 4x2 min all-out at 540-550W (~120% FTP), with full recovery (~3 min) between intervals. FTP assumed 450W.</description>
+  <author>https://www.evoq.bike/blog/inside-the-training</author>
+  <sportType>bike</sportType>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.5" PowerHigh="0.75" />
+    <IntervalsT Repeat="5" OnDuration="180" OffDuration="180" OnPower="1.2" OffPower="0.5"/>
+    <IntervalsT Repeat="4" OnDuration="180" OffDuration="180" OnPower="1.2" OffPower="0.5"/>
+    <IntervalsT Repeat="4" OnDuration="120" OffDuration="180" OnPower="1.2" OffPower="0.5"/>
+    <Cooldown Duration="600" PowerLow="0.6" PowerHigh="0.5" />
+  </workout>
+</workout_file>

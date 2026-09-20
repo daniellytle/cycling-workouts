@@ -1,0 +1,11 @@
+<workout_file>
+  <name>Simmons Breakaway Simulation</name>
+  <description>Quinn Simmons' breakaway simulation: 5x6 min at ~400W (~89% FTP), immediately into fat-max endurance (~340W, ~76% FTP), mimicking the fight to make a breakaway then rolling turns once it sticks. FTP assumed 450W.</description>
+  <author>https://www.evoq.bike/blog/inside-the-training</author>
+  <sportType>bike</sportType>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.5" PowerHigh="0.75" />
+    <IntervalsT Repeat="5" OnDuration="360" OffDuration="360" OnPower="0.89" OffPower="0.76"/>
+    <Cooldown Duration="600" PowerLow="0.6" PowerHigh="0.5" />
+  </workout>
+</workout_file>
